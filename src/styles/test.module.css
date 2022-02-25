@@ -1,0 +1,43 @@
+.container{
+    padding: 30px 50px;
+    min-height: 100vh;
+}
+
+.choiceDisplay{
+    padding: 40px 10px;
+    background-color: white;
+}
+
+.choiceDisplay p{
+    margin: 0;
+}
+
+.choice{
+    display: flex;
+    align-items: center;
+    background-color: var(--background_gray);
+    padding: 10px;
+}
+
+.choice:not(:first-child){
+    margin-top: 10px;
+}
+
+.question{
+    background-color: white;
+    padding: 0 30px;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.homeLink{
+    margin-bottom: 20px;
+}
+
+.a:hover{
+    color: '#90EE90'
+}
