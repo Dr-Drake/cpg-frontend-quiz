@@ -1,0 +1,100 @@
+.container{
+    padding: 30px 50px;
+    min-height: 100vh;
+}
+
+.choiceDisplay{
+    padding: 40px 10px;
+    background-color: white;
+}
+
+.choiceDisplay p{
+    margin: 0;
+}
+
+.choice{
+    display: flex;
+    align-items: center;
+    background-color: var(--background_gray);
+    padding: 10px;
+}
+
+.choice:not(:first-child){
+    margin-top: 10px;
+}
+
+.question{
+    background-color: white;
+    padding: 0 30px;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.homeLink{
+    margin-bottom: 20px;
+}
+
+.a:hover{
+    color: '#90EE90'
+}
+
+.questionEdit{
+    padding: 0 30px;
+}
+.questionEdit textarea{
+    width: 100%;
+    padding: 10px 30px;
+}
+
+.choiceEditDisplay{
+    padding: 40px 10px;
+}
+.choiceEdit{
+    display: flex;
+    align-items: center;
+}
+.choiceEdit input{
+    padding: 20px 10px;
+    width: 100%;
+}
+.choiceEdit:not(:first-child){
+    margin-top: 10px;
+}
+
+.answerDisplay{
+    padding: 10px;
+}
+
+.answerDisplay input{
+    width: 5ch;
+    text-align: center;
+}
+
+.addOption{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.key{
+    flex: 0.07;
+}
+.key input{
+    width: 5ch;
+    text-align: center;
+}
+
+.text{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.text input{
+    padding: 10px;
+    width: 100%;
+}

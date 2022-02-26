@@ -4,7 +4,11 @@ import { useQuiz } from '../../services/quiz';
 import { Quiz } from '../../types/quiz';
 import styles from './quizSet.module.css';
 
-const QuizSet: React.FC<any> = ()=>{
+export interface QuizSetProps{
+    mode?: 'edit' | 'test';
+}
+
+const QuizSet: React.FC<QuizSetProps> = ({ mode = 'test' })=>{
 
     // Hooks
     const { data, isLoading, isError } = useQuiz();
@@ -27,10 +31,18 @@ const QuizSet: React.FC<any> = ()=>{
 
     // Handlers
     const handleClick = (start: number, end: number)=>{
-        router.push({
-            pathname: '/test',
-            query:{ start, end }
-        })
+        if (mode === 'test') {
+            router.push({
+                pathname: '/test',
+                query:{ start, end }
+            })
+        }
+        else{
+            router.push({
+                pathname: '/edit/preview',
+                query:{ start, end }
+            })
+        }
     }
 
     return(

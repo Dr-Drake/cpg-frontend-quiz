@@ -1,6 +1,8 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import useSwr from 'swr';
 import { Quiz } from '../types/quiz';
+import { UpdateQuizRequest } from '../types/request';
+import { GeneralResponse } from '../types/response';
 
 const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
 
@@ -32,5 +34,22 @@ export const fetchQuiz = ()=>{
         })
     })
 
-    return willFetchQuiz
+    return willFetchQuiz;
+}
+
+interface UpdateQuizResult{
+    data?: GeneralResponse; error?: any;
+}
+export const updateQuiz = (id: string, request: UpdateQuizRequest)=>{
+    const willUpdateQuiz = new Promise<UpdateQuizResult>((resolve)=>{
+        axios.put(baseUrl + `/quiz/${id}`, request)
+        .then((response: AxiosResponse<GeneralResponse>)=>{
+            resolve({ data: response.data});
+        })
+        .catch((err)=>{
+            resolve({ error: err })
+        })
+    })
+
+    return willUpdateQuiz;
 }

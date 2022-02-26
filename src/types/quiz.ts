@@ -1,5 +1,5 @@
 export interface Choice{
-    id: string;
+    id?: string;
     label: string;
     text: string;
 }
