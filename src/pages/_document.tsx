@@ -11,6 +11,7 @@ export default class MyDocument extends Document {
         <Head>
             <title>CPG Practice Quiz</title>
             <meta name="description" content="Used in preparation for the CPG test" />
+            <link rel="icon" href="/favicon.ico" />
             <link
                 rel="stylesheet"
                 href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"

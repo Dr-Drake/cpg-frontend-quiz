@@ -1,19 +1,18 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import Footer from '../components/Footer'
 import { fetchQuiz } from '../services/quiz'
 import styles from '../styles/Index.module.css';
 import { Quiz } from '../types/quiz';
 import { SWRConfig } from 'swr'
-import QuizSet from '../components/QuizSet'
 import NavigationBar from '../components/NavigationBar'
+import SessionQuizSet from '../components/SessionQuizSet'
 
-interface HomeProps{
+interface SessionPageProps{
   fallback: { [index:string]: Quiz[] };
 }
 
-const Home: NextPage<HomeProps> = ({ fallback }) => {
+const SessionPage: NextPage<SessionPageProps> = ({ fallback }) => {
 
   return (
     <>
@@ -21,13 +20,13 @@ const Home: NextPage<HomeProps> = ({ fallback }) => {
     <div className={styles.container}>
       <main>
         <div>
-          <h1>CPG Practice Quiz</h1>
+          <h1>Ongoing sessions</h1>
         </div>
         <div>
-          <p>Select any of the quizzes below:</p>
+          <p>Below are the quizzes you've already started: </p>
 
           <SWRConfig value={{ fallback }}>
-            <QuizSet />
+            <SessionQuizSet />
           </SWRConfig>
         </div>
       </main>
@@ -56,4 +55,4 @@ export async function getStaticProps () {
   }
 }
 
-export default Home;
+export default SessionPage;

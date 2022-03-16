@@ -22,8 +22,8 @@ const NavigationBar: React.FC<any> = ()=>{
 
             {/** Main menu */}
             <div className={styles.menu}>
-                <Link href='/'>
-                    <a>
+                <Link href='/sessions'>
+                    <a className={router.pathname === '/sessions' ? `${styles.active}`: undefined}>
                         Ongoing Sessions
                     </a>
                 </Link>

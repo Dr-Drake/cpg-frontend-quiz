@@ -17,4 +17,6 @@ a {
 
 :root{
   --background_gray: #E7E9EB;
+  --background_correct: #beebbe;
+  --background_wrong: #eb7159;
 }

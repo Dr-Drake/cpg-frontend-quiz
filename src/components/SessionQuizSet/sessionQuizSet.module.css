@@ -1,0 +1,19 @@
+.set{
+    background-color: var(--background_gray);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.set:not(:first-child){
+    margin-top: 15px;
+}
+
+.set:hover{
+    background-color: #ddd;
+}
+
+.set:active{
+    transform: scale(0.99);
+}

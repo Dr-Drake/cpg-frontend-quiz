@@ -10,3 +10,11 @@ export interface Quiz{
     choices: Choice[];
     correctAnswer?: Choice;
 }
+
+export interface QuizSession{
+    [index: string]:{
+        step: number;
+        choiceStep: number;
+        answers: string[];
+    }
+}

@@ -49,18 +49,7 @@ const QuizSet: React.FC<QuizSetProps> = ({ mode = 'test' })=>{
         <div>
             {
                 simpleArray.map((item, index)=>{
-                    if (index === (parts - 1)) {
-                        return(
-                            <div key={index} className={styles.set}
-                                onClick={()=> handleClick(
-                                    (data ? data.length - remainder : 0), (data ? data.length : 0)
-                                )}
-                            >
-                                {`${data && data.length - remainder} to ${data && data.length}`}
-                            </div>
-                        )
-                    }
-
+                    
                     return(
                         <div key={index} className={styles.set} 
                             onClick={()=> handleClick(index * partition, (index + 1) * partition - 1)}
@@ -70,6 +59,16 @@ const QuizSet: React.FC<QuizSetProps> = ({ mode = 'test' })=>{
                     )
 
                 })
+            }
+            {
+                remainder > 0 &&
+                <div className={styles.set}
+                    onClick={()=> handleClick(
+                        (data ? (data.length - remainder - 1) : 0), (data ? data.length - 1 : 0)
+                    )}
+                >
+                    {`${data && data.length - remainder} to ${data && data.length}`}
+                </div>
             }
         </div>
     )

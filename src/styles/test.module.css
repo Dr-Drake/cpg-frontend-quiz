@@ -19,6 +19,14 @@
     padding: 10px;
 }
 
+.correct{
+    background-color: var(--background_correct);
+}
+
+.wrong{
+    background-color: var(--background_wrong);
+}
+
 .choice:not(:first-child){
     margin-top: 10px;
 }
