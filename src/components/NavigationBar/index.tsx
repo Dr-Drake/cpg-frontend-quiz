@@ -32,6 +32,11 @@ const NavigationBar: React.FC<any> = ()=>{
                         Edit Questions
                     </a>
                 </Link>
+                <Link href='/add'>
+                    <a className={router.pathname === '/add' ? `${styles.active}`: undefined}>
+                        Add Question
+                    </a>
+                </Link>
                 <Link href='/'>
                     <a>
                         Scores

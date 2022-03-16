@@ -53,3 +53,17 @@ export const updateQuiz = (id: string, request: UpdateQuizRequest)=>{
 
     return willUpdateQuiz;
 }
+
+export const addQuiz = (request: UpdateQuizRequest)=>{
+    const willAddQuiz = new Promise<UpdateQuizResult>((resolve)=>{
+        axios.post(baseUrl + `/quiz/add`, request)
+        .then((response: AxiosResponse<GeneralResponse>)=>{
+            resolve({ data: response.data});
+        })
+        .catch((err)=>{
+            resolve({ error: err })
+        })
+    })
+
+    return willAddQuiz;
+}
